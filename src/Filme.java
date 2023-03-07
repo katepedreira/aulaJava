@@ -8,6 +8,12 @@ public class Filme {
     private Diretor diretor;
     private Genero genero;
 
+    public Filme(Genero genero, Diretor diretor) {
+        this.genero = genero;
+        this.diretor = diretor;
+        diretor.addFilme(this);
+    }
+
     public String getNome() {
         return nome;
     }
@@ -54,5 +60,10 @@ public class Filme {
 
     public void setListaAtores(ArrayList<Ator> listaAtores) {
         this.listaAtores = listaAtores;
+    }
+
+    @Override
+    public String toString() {
+        return this.nome.concat("\n").concat(this.getGenero().getNome()).concat("\n").concat(this.getAnoLancamento().toString());
     }
 }

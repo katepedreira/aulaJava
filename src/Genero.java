@@ -4,6 +4,10 @@ public class Genero {
     private String nome;
     private ArrayList<Filme> listaFilmes = new ArrayList<>();
 
+    public Genero(String nome) {
+        this.nome = nome;
+    }
+
     public String getNome() {
         return nome;
     }
